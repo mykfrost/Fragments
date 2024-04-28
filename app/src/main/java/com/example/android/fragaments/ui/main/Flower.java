@@ -59,6 +59,16 @@ public class Flower {
             this.instructions = bundle.getString(INSTRUCTIONS);
         }
     }
+
+    // Package ddata for transfer between activities
+    public  Bundle toBundle(){
+        Bundle bundle = new Bundle();
+        bundle.putString(FLOWER_NAME , this.flowerName);
+        bundle.putInt(IMAGE_RESOURCE , this.imageResource);
+        bundle.putDouble(PRICE , this.price);
+        bundle.putString(INSTRUCTIONS, this.instructions);
+        return bundle;
+    }
     private String flowerName;
     private int imageResource;
     private String instructions;
